@@ -1,0 +1,18 @@
+eval "$(~/.local/bin/mise activate zsh)"
+eval "$(starship init zsh)"
+
+# Define auto-completion function
+function init_completion() {
+  if [ -f ~/.zsh_completions ]; then
+    compinit
+    source ~/.zsh_completions
+  fi
+}
+
+# Run auto-completion once a day
+autoload -Uz compinit
+if [[ "$(date +'%j')" != "$(stat -f '%Sm' -t '%j' ~/.zcompdump)" ]]; then
+  init_completion
+else
+  compinit -C
+fi
