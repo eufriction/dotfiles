@@ -1,2 +1,4 @@
-# dotfiles
-Everything needed to get setup and keep settings in sync.
+# README
+Everything except sensitive information to setup a new computer and keep it in sync.
+
+## Getting Started

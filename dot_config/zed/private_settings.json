@@ -1,0 +1,68 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+
+{
+  "agent": {
+    "model_parameters": [],
+    "default_model": {
+      "provider": "mistral",
+      "model": "codestral-latest"
+    },
+    "version": "2"
+  },
+  "auto_update_extensions": {
+    "vale": false
+  },
+  "autosave": "on_focus_change",
+  "buffer_font_size": 14,
+  "file_scan_exclusions": [],
+  "language_models": {
+    "mistral": {
+      "api_url": "https://codestral.mistral.ai/v1",
+      "available_models": [
+        {
+          "display_name": "Codestral 25.01",
+          "name": "codestral-latest",
+          "max_tokens": 256000
+        }
+      ]
+    }
+  },
+  "languages": {
+    "Markdown": {
+      "language_servers": ["vale"]
+    }
+  },
+  "lsp": {
+    "vale": {
+      "binary": {
+        "path": "vale-ls"
+      },
+      "initialization_options": {
+        "syncOnStartup": true
+      }
+    }
+  },
+  "preferred_line_length": 120,
+  "soft_wrap": "bounded",
+  "telemetry": {
+    "metrics": false,
+    "diagnostics": false
+  },
+  "terminal": {
+    "copy_on_select": true
+  },
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "Ayu Mirage"
+  },
+  "ui_font_size": 14,
+  "vim_mode": false
+}

@@ -1,3 +1,16 @@
+# Configure zsh history
+HISTSIZE=100000
+SAVEHIST=100000
+
+# Write to the history file immediately, not when the shell exits.
+setopt INC_APPEND_HISTORY
+# Duplicates get trimmed first.
+setopt HIST_EXPIRE_DUPS_FIRST
+# Ignore immediate duplicate entries.
+setopt HIST_IGNORE_DUPS
+# Share history between sessions.
+setopt SHARE_HISTORY
+
 eval "$(~/.local/bin/mise activate zsh)"
 eval "$(starship init zsh)"
 
