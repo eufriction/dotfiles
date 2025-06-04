@@ -6,7 +6,6 @@
 // To see all of Zed's default settings without changing your
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
-
 {
   "agent": {
     "model_parameters": [],
@@ -20,8 +19,6 @@
     "vale": false
   },
   "autosave": "on_focus_change",
-  "buffer_font_size": 14,
-  "file_scan_exclusions": [],
   "language_models": {
     "mistral": {
       "api_url": "https://codestral.mistral.ai/v1",
@@ -36,10 +33,35 @@
   },
   "languages": {
     "Markdown": {
-      "language_servers": ["vale"]
+      "language_servers": [
+        "vale"
+      ]
     }
   },
   "lsp": {
+    "gopls": {
+      "initialization_options": {
+        "gofumpt": true,
+        "hints": {
+          "assignVariableTypes": true,
+          "compositeLiteralFields": true,
+          "compositeLiteralTypes": true,
+          "constantValues": true,
+          "functionTypeParameters": true,
+          "parameterNames": true,
+          "rangeVariableTypes": true
+        },
+        "vulncheck": "Imports",
+        "codelenses": {
+          "run_govulncheck": true,
+          "test": true,
+          "tidy": true,
+          "upgrade_dependency": true
+        },
+        "semanticTokens": true,
+        "usePlaceholders": true
+      }
+    },
     "vale": {
       "binary": {
         "path": "vale-ls"
@@ -47,6 +69,12 @@
       "initialization_options": {
         "syncOnStartup": true
       }
+    }
+  },
+  "format_on_save": "language_server",
+  "formatter": {
+    "code_actions": {
+      "source.organizeImports": true
     }
   },
   "preferred_line_length": 120,
@@ -59,9 +87,9 @@
     "copy_on_select": true
   },
   "theme": {
-    "mode": "system",
+    "dark": "Ayu Dark",
     "light": "One Light",
-    "dark": "Ayu Dark"
+    "mode": "system"
   },
   "ui_font_size": 14,
   "vim_mode": false
