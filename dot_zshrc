@@ -16,7 +16,8 @@ setopt HIST_IGNORE_DUPS
 # Share history between sessions.
 setopt SHARE_HISTORY
 
-eval "$(~/.local/bin/mise activate zsh)"
+export PATH="$HOME/.local/bin:$PATH"
+eval "$(mise activate zsh)"
 eval "$(starship init zsh)"
 
 # Define auto-completion function
