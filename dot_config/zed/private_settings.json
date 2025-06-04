@@ -8,39 +8,51 @@
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
   "agent": {
-    "model_parameters": [],
+    "always_allow_tool_actions": false,
     "default_model": {
       "provider": "mistral",
-      "model": "mistral-large-latest"
+      "model": "devstral-small-latest"
     },
+    "model_parameters": [],
     "version": "2"
   },
   "auto_update_extensions": {
     "vale": false
   },
   "autosave": "on_focus_change",
+  "buffer_font_size": 14,
   "language_models": {
-    "mistral": {
-      "api_url": "https://codestral.mistral.ai/v1",
+    "ollama": {
+      "api_url": "http://localhost:11434",
       "available_models": [
         {
-          "display_name": "Codestral 25.01",
-          "name": "codestral-latest",
-          "max_tokens": 256000
+          "name": "devstral:latest",
+          "display_name": "devstral",
+          "max_tokens": 32768,
+          "supports_tools": true
         }
       ]
     }
   },
   "languages": {
+    "Go": {
+      "enable_language_server": true,
+      "language_servers": ["gopls"]
+    },
     "Markdown": {
-      "language_servers": [
-        "vale"
-      ]
+      "enable_language_server": true,
+      "language_servers": ["vale"]
     }
   },
   "lsp": {
     "gopls": {
+      "binary": {
+        "path": "gopls"
+      },
       "initialization_options": {
+        "codelenses": {
+          "run_govulncheck": true
+        },
         "gofumpt": true,
         "hints": {
           "assignVariableTypes": true,
@@ -51,15 +63,10 @@
           "parameterNames": true,
           "rangeVariableTypes": true
         },
-        "vulncheck": "Imports",
-        "codelenses": {
-          "run_govulncheck": true,
-          "test": true,
-          "tidy": true,
-          "upgrade_dependency": true
-        },
         "semanticTokens": true,
-        "usePlaceholders": true
+        "staticcheck": true,
+        "usePlaceholders": true,
+        "vulncheck": "Imports"
       }
     },
     "vale": {
@@ -67,7 +74,16 @@
         "path": "vale-ls"
       },
       "initialization_options": {
-        "syncOnStartup": true
+        "syncOnStartup": false
+      }
+    },
+    "yaml-language-server": {
+      "settings": {
+        "yaml": {
+          "schemaStore": {
+            "enable": true
+          }
+        }
       }
     }
   },
