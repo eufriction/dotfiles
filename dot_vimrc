@@ -4,6 +4,9 @@ set expandtab
 " Set the number of spaces that a tab counts for
 set tabstop=2
 
+" If zero, use the shiftwidth value for number of spaces when using tab
+set softtabstop=0
+
 " Set the number of spaces to use for each step of (auto)indent
 set shiftwidth=2
 

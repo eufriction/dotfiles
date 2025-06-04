@@ -2,12 +2,10 @@
     name = {{ .name | quote }}
     email = {{ .personal.git.email | quote }}
     signingkey = {{ .personal.git.signingKey | quote }}
-
 {{- if .work.enable }}
 [includeIf "gitdir:~/clones/"]
     path = ~/.gitconfig.work
 {{- end }}
-
 [commit]
     gpgsign = true
 [gpg]
@@ -20,3 +18,8 @@
 [credential "https://gist.github.com"]
     helper =
     helper = !gh auth git-credential
+[http]
+    version = HTTP/2
+    postBuffer = 524288000
+[init]
+    defaultBranch = main
