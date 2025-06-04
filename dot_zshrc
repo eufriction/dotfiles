@@ -1,3 +1,8 @@
+# Debug startup time
+#zmodload zsh/zprof
+#setopt prompt_subst; zmodload zsh/datetime; PS4='+[$EPOCHREALTIME]%N:%i> '; 
+#set -x
+
 # Configure zsh history
 HISTSIZE=100000
 SAVEHIST=100000
