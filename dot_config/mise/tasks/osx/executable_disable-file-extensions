@@ -1,0 +1,5 @@
+#MISE description="Disable file extensions globally."
+#MISE alias="o:dfe"
+defaults write NSGlobalDomain AppleShowAllExtensions -bool false
+killall Finder
+killall Spotlight

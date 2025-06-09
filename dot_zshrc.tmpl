@@ -1,6 +1,6 @@
 # Debug startup time
 #zmodload zsh/zprof
-#setopt prompt_subst; zmodload zsh/datetime; PS4='+[$EPOCHREALTIME]%N:%i> '; 
+#setopt prompt_subst; zmodload zsh/datetime; PS4='+[$EPOCHREALTIME]%N:%i> ';
 #set -x
 
 # Configure zsh history
@@ -32,6 +32,9 @@ function init_completion() {
 autoload -Uz compinit
 if [[ "$(date +'%j')" != "$(stat -f '%Sm' -t '%j' ~/.zcompdump)" ]]; then
   init_completion
+  {{- if .work.enable }}
+  mise run osx:disable-file-extensions
+  {{- end }}
 else
   compinit -C
 fi

@@ -1,0 +1,16 @@
+[tools]
+"go:golang.org/x/tools/gopls" = "latest"
+"ubi:errata-ai/vale-ls" = "latest"
+chezmoi = "latest"
+gh = "latest"
+go = "latest"
+k9s = "latest"
+kind = "latest"
+kubebuilder = "latest"
+kubectl = "latest"
+kubelogin = "latest"
+usage = "latest"
+vale = "latest"
+
+[settings]
+experimental = true
