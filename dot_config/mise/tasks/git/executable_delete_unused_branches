@@ -1,3 +1,4 @@
 #MISE description="Delete all unused branches in the current repository."
+#MISE dir="{{cwd}}"
 #MISE alias="g:dub"
 git branch -vv | grep ': gone]' | awk '{print $1}' | xargs git branch -D
