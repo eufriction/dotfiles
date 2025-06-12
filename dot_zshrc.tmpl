@@ -20,21 +20,4 @@ export PATH="$HOME/.local/bin:$PATH"
 eval "$(mise activate zsh)"
 eval "$(starship init zsh)"
 
-# Define auto-completion function
-function init_completion() {
-  if [ -f ~/.zsh_completions ]; then
-    compinit
-    source ~/.zsh_completions
-  fi
-}
-
-# Run auto-completion once a day
-autoload -Uz compinit
-if [[ "$(date +'%j')" != "$(stat -f '%Sm' -t '%j' ~/.zcompdump)" ]]; then
-  init_completion
-  {{- if .work.enable }}
-  mise run osx:disable-file-extensions
-  {{- end }}
-else
-  compinit -C
-fi
+source ~/.zsh_daily # Run expensive operations once per day
