@@ -1,0 +1,5 @@
+{{- if .work.enable }}
+export PATH="/opt/homebrew/bin:$PATH"
+{{- end }}
+export PATH="$PATH:/Users/aa100324/.lmstudio/bin"
+eval "$($HOME/.local/bin/mise activate zsh --shims)"

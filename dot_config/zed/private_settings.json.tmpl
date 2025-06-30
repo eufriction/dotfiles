@@ -16,11 +16,36 @@
     "model_parameters": [],
     "version": "2"
   },
-  "auto_update_extensions": {
-    "vale": false
+  "auto_install_extensions": {
+    "helm": true,
+    "html": true,
+    "toml": true,
+    "vale": true
   },
   "autosave": "on_focus_change",
   "buffer_font_size": 14,
+  "edit_predictions": {
+    "mode": "subtle"
+  },
+  {{- if .work.enable }}
+  "features": {
+    "edit_prediction_provider": "copilot"
+  },
+  {{- else }}
+  "features": {
+    "edit_prediction_provider": "none"
+  },
+  {{- end }}
+  "file_types": {
+    "Helm": [
+      "**/templates/**/*.tpl",
+      "**/templates/**/*.yaml",
+      "**/templates/**/*.yml",
+      "**/helmfile.d/**/*.yaml",
+      "**/helmfile.d/**/*.yml",
+      "**/values*.yaml"
+    ]
+  },
   "language_models": {
     "ollama": {
       "api_url": "http://localhost:11434",
@@ -37,11 +62,15 @@
   "languages": {
     "Go": {
       "enable_language_server": true,
-      "language_servers": ["gopls"]
+      "language_servers": [
+        "gopls"
+      ]
     },
     "Markdown": {
       "enable_language_server": true,
-      "language_servers": ["vale"]
+      "language_servers": [
+        "vale"
+      ]
     }
   },
   "lsp": {
@@ -69,12 +98,22 @@
         "vulncheck": "Imports"
       }
     },
+    "helm_ls": {
+      "settings": {
+        "helm-ls": {
+          "logLevel": "warning",
+          "yamlls": {
+            "enabled": false
+          }
+        }
+      }
+    },
     "vale": {
       "binary": {
         "path": "vale-ls"
       },
       "initialization_options": {
-        "syncOnStartup": false
+        "syncOnStartup": true
       }
     },
     "yaml-language-server": {
