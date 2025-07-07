@@ -12,12 +12,9 @@
     program = gpg
 [tag]
     gpgSign = true
-[credential "https://github.com"]
-    helper =
+[credential]
     helper = !gh auth git-credential
-[credential "https://gist.github.com"]
-    helper =
-    helper = !gh auth git-credential
+    useHttpPath = true
 [http]
     version = HTTP/2
     postBuffer = 524288000
