@@ -10,8 +10,13 @@
   "agent": {
     "always_allow_tool_actions": false,
     "default_model": {
+    {{- if .work.enable }}
+      "provider": "copilot_chat",
+      "model": "claude-3.7-sonnet"
+    {{- else }}
       "provider": "mistral",
       "model": "devstral-small-latest"
+    {{- end }}
     },
     "model_parameters": [],
     "version": "2"
@@ -143,7 +148,7 @@
   },
   "theme": {
     "dark": "Ayu Dark",
-    "light": "Ayu Mirage",
+    "light": "One Light",
     "mode": "system"
   },
   "ui_font_size": 14,
