@@ -30,12 +30,12 @@
   "buffer_font_size": 14,
   "context_servers": {
     "mcp-server-github": {
-        "source": "extension",
-        "settings": {
+      "source": "extension",
+      "settings": {
         "github_personal_access_token": {{ secret "find-generic-password" "-ga" "mcp-server-github" "-w" | quote }}
-        }
+      }
     }
-},
+  },
   "edit_predictions": {
     "mode": "subtle"
   },
@@ -159,5 +159,5 @@
     "mode": "system"
   },
   "ui_font_size": 14,
-  "vim_mode": false
+  "vim_mode": true
 }
