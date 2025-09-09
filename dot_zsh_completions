@@ -1,6 +1,7 @@
 #source <(argocd completion zsh)
 #source <(cilium completion zsh)
 #source <(cmctl completion zsh)
+source <(docker completion zsh)
 source <(gh completion --shell zsh)
 #source <(helm completion zsh)
 #source <(jwt completion zsh)
