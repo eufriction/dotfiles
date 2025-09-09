@@ -1,3 +1,6 @@
+[env]
+MISE_GITHUB_TOKEN = {{ secret "find-generic-password" "-ga" "mise-gh-pat" "-w" | quote }}
+
 [tools]
 "go:golang.org/x/tools/gopls" = "latest"
 "ubi:errata-ai/vale-ls" = "latest"
