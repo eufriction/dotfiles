@@ -18,7 +18,7 @@
       "model": "devstral-small-latest"
     {{- end }}
     },
-    "model_parameters": [],
+    "model_parameters": []
   },
   "auto_install_extensions": {
     "helm": false,
@@ -81,6 +81,7 @@
     "Markdown": {
       "enable_language_server": true,
       "language_servers": [
+        "markdown-oxide",
         "vale"
       ]
     }
@@ -144,6 +145,9 @@
       "source.organizeImports": true
     }
   },
+  "macos": {
+    "use_system_window_tabs": true
+  },
   "preferred_line_length": 120,
   "soft_wrap": "bounded",
   "telemetry": {
@@ -155,7 +159,7 @@
   },
   "theme": {
     "dark": "Ayu Dark",
-    "light": "One Light",
+    "light": "Hex Solarized Light Theme",
     "mode": "system"
   },
   "ui_font_size": 14,
