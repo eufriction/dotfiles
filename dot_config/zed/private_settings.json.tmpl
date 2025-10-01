@@ -8,6 +8,17 @@
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
   "agent": {
+    {{- if .work.enable }}
+    "inline_assistant_model": {
+      "provider": "copilot_chat",
+      "model": "claude-sonnet-4"
+    },
+    {{- else }}
+    "inline_assistant_model": {
+      "provider": "mistral",
+      "model": "codestral-latest"
+    },
+    {{- end }}
     "always_allow_tool_actions": false,
     "default_model": {
     {{- if .work.enable }}
