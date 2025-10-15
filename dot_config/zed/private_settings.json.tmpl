@@ -23,7 +23,7 @@
     "default_model": {
     {{- if .work.enable }}
       "provider": "copilot_chat",
-      "model": "claude-3.7-sonnet-thought"
+      "model": "claude-sonnet-4"
     {{- else }}
       "provider": "mistral",
       "model": "devstral-small-latest"
@@ -32,7 +32,7 @@
     "model_parameters": []
   },
   "auto_install_extensions": {
-    "helm": false,
+    "helm": true,
     "html": true,
     "toml": true,
     "vale": true
@@ -127,9 +127,8 @@
     "helm_ls": {
       "settings": {
         "helm-ls": {
-          "logLevel": "warning",
           "yamlls": {
-            "enabled": false
+            "enabled": true
           }
         }
       }
@@ -159,7 +158,7 @@
     }
   },
   "macos": {
-    "use_system_window_tabs": true
+    "use_system_window_tabs": false
   },
   "preferred_line_length": 120,
   "soft_wrap": "bounded",
@@ -171,7 +170,7 @@
     "copy_on_select": true
   },
   "theme": {
-    "dark": "Ayu Dark",
+    "dark": "Hex Ayu Mirage",
     "light": "Hex Solarized Light Theme",
     "mode": "system"
   },

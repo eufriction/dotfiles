@@ -1,10 +1,14 @@
+#!/bin/bash
 # Run expensive operations once per day
+
+# Source helper scripts with functions
+source ${HOME}/.zsh_completions
 
 # Define paths
 local last_run_path="${XDG_CACHE_HOME:-$HOME/.cache}/zsh_daily"
 local last_run_file="${last_run_path}/last_successful_run"
 
-# Ensure the path exists
+# Ensure the paths exist
 mkdir -p "$last_run_path"
 
 # Read last run (safely), get today's date
@@ -22,7 +26,9 @@ if [[ $last_run != $today ]]; then
   mise run osx:disable-file-extensions
   {{- end }}
   compinit
-  source ~/.zsh_completions
+  generate_completions
+  load_completions
 else
   compinit -C
+  load_completions
 fi

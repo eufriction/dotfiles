@@ -1,10 +1,28 @@
-#source <(argocd completion zsh)
-source <(cilium completion zsh)
-#source <(cmctl completion zsh)
-source <(docker completion zsh)
-source <(gh completion --shell zsh)
-source <(helm completion zsh)
-source <(jwt completion zsh)
-source <(kubectl completion zsh)
-source <(mise completion --raw zsh)
-source <(starship completions zsh)
+#!/bin/bash
+local completions_dir="$HOME/.zsh_completions.d"
+
+generate_completions() {
+  echo "Generating completion files..."
+  mkdir -p "$completions_dir"
+
+  # Generate individual completion files
+  local standard_clis=("argocd" "cilium" "cmctl" "docker" "helm" "jwt" "kubectl")
+  local special_clis=("gh" "mise" "starship")
+
+  for cli in "${standard_clis[@]}"; do
+    $cli completion zsh > "$completions_dir/_$cli" 2>/dev/null
+  done
+
+  # Special cases with different command formats
+  gh completion --shell zsh > "$completions_dir/_gh" 2>/dev/null
+  mise completion --raw zsh > "$completions_dir/_mise" 2>/dev/null
+  starship completions zsh > "$completions_dir/_starship" 2>/dev/null
+}
+
+load_completions() {
+  if [[ -d "$completions_dir" ]]; then
+    for completion_file in "$completions_dir"/*; do
+      [[ -r "$completion_file" ]] && source "$completion_file"
+    done
+  fi
+}
