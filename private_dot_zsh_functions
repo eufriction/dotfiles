@@ -2,7 +2,9 @@ precmd() {
   typeset -g PROMPT_REFRESH_LAST PROMPT_REFRESH_EVERY=1800
   local now=$(date +%s)
   if [[ -z $PROMPT_REFRESH_LAST || $(( now - PROMPT_REFRESH_LAST )) -ge $PROMPT_REFRESH_EVERY ]]; then
-    eval $(AWS_VAULT= aws-vault export --format=export-env $AWS_VAULT)
+    if [[ -n $AWS_VAULT ]]; then
+      eval $(AWS_VAULT= aws-vault export --format=export-env $AWS_VAULT)
+    fi
     PROMPT_REFRESH_LAST=$now
   fi
 }
