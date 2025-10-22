@@ -6,7 +6,7 @@ generate_completions() {
   mkdir -p "$completions_dir"
 
   # Generate individual completion files
-  local standard_clis=("argocd" "cilium" "cmctl" "docker" "helm" "jwt" "kubectl")
+  local standard_clis=("argocd" "cilium" "chezmoi" "cmctl" "docker" "helm" "jwt" "kubectl")
   local special_clis=("gh" "mise" "starship")
 
   for cli in "${standard_clis[@]}"; do
