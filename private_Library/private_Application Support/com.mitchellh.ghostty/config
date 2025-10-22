@@ -1,0 +1,3 @@
+clipboard-trim-trailing-spaces=true
+copy-on-select=clipboard
+theme=dark:Builtin Solarized Dark,light:iTerm2 Solarized Light
