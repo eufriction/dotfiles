@@ -22,6 +22,8 @@ autoload -Uz compinit
 if [[ $last_run != $today ]]; then
   echo "$today" >| "$last_run_file"
   echo "Running daily operations."
+  mise self-update -y
+  mise upgrade
   {{- if .work.enable }}
   mise run osx:disable-file-extensions
   {{- end }}
