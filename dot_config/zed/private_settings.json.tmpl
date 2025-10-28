@@ -39,6 +39,7 @@
   },
   "autosave": "on_focus_change",
   "buffer_font_size": 14,
+  {{- if .work.enable }}
   "context_servers": {
     "mcp-server-github": {
       "source": "extension",
@@ -47,6 +48,7 @@
       }
     }
   },
+  {{- end }}
   "edit_predictions": {
     "mode": "subtle"
   },
