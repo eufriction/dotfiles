@@ -1,0 +1,7 @@
+Host github.com
+    HostName github.com
+    IdentitiesOnly yes
+
+{{- if .work.enable }}
+Include ~/.ssh/config.work
+{{- end  }}
