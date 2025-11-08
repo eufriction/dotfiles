@@ -28,13 +28,14 @@ run_daily_operations() {
     compinit
     generate_completions
     load_completions
-
-    # Mark today as successful run
-    echo "$today" > "$last_run_file"
 }
 
 # Run daily tasks only if not already run today
 if [[ $last_run != $today ]]; then
+  # Mark today as successful run before
+  # running to reduce multiple terminals
+  # rying to run at the same time
+  echo "$today" > "$last_run_file"
   run_daily_operations
 else
   compinit -C
