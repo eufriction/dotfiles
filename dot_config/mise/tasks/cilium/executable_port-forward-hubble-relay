@@ -1,4 +1,4 @@
-#MISE description="Port-forward to hubble-ui in the current context"
+#MISE description="Port-forward to hubble-relay in the current context"
 #MISE dir="{{cwd}}"
-#MISE alias="pfhu"
+#MISE alias="pfhr"
 kubectl port-forward -n kube-system svc/hubble-relay 4245:80
