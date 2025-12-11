@@ -44,7 +44,6 @@
   "context_servers": {
     "mcp-server-github": {
       "enabled": true,
-      "source": "extension",
       "settings": {
         "github_personal_access_token": {{ secret "find-generic-password" "-ga" "mcp-server-github" "-w" | quote }}
       }
