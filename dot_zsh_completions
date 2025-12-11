@@ -7,7 +7,7 @@ generate_completions() {
 
   # Generate individual completion files
   local standard_clis=("argocd" "cilium" "chezmoi" "cmctl" "docker" "helm" "jwt" "kubectl")
-  local special_clis=("gh" "mise" "starship")
+  local special_clis=("gh" "mise" "nats" "starship")
 
   for cli in "${standard_clis[@]}"; do
     $cli completion zsh > "$completions_dir/_$cli" 2>/dev/null
@@ -16,13 +16,14 @@ generate_completions() {
   # Special cases with different command formats
   gh completion --shell zsh > "$completions_dir/_gh" 2>/dev/null
   mise completion --raw zsh > "$completions_dir/_mise" 2>/dev/null
+  nats --completion-script-zsh > "$completions_dir/_nats" 2>/dev/null
   starship completions zsh > "$completions_dir/_starship" 2>/dev/null
 }
 
 load_completions() {
   if [[ -d "$completions_dir" ]]; then
     for completion_file in "$completions_dir"/*; do
-      [[ -r "$completion_file" ]] && source "$completion_file"
+      [[ -r "$completion_file" ]] && source <(cat "$completion_file")
     done
   fi
 }
