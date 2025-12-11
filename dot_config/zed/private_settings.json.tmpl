@@ -19,16 +19,17 @@
       "model": "codestral-latest"
     },
     {{- end }}
-    "always_allow_tool_actions": false,
+    "always_allow_tool_actions": true,
     "default_model": {
     {{- if .work.enable }}
       "provider": "copilot_chat",
-      "model": "claude-sonnet-4"
+      "model": "claude-sonnet-4.5"
     {{- else }}
       "provider": "mistral",
       "model": "devstral-small-latest"
     {{- end }}
     },
+    "default_profile": "write",
     "model_parameters": []
   },
   "auto_install_extensions": {
@@ -42,6 +43,7 @@
   {{- if .work.enable }}
   "context_servers": {
     "mcp-server-github": {
+      "enabled": true,
       "source": "extension",
       "settings": {
         "github_personal_access_token": {{ secret "find-generic-password" "-ga" "mcp-server-github" "-w" | quote }}
@@ -71,6 +73,7 @@
       "**/values*.yaml"
     ]
   },
+  "helix_mode": true,
   "language_models": {
     "ollama": {
       "api_url": "http://localhost:11434",
