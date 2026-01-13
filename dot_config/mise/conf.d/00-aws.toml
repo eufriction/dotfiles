@@ -4,7 +4,7 @@ AWS_VAULT_BACKEND = "keychain"
 
 [tools]
 aws-cli = "latest"
-aws-vault = "latest"
+"github:ByteNess/aws-vault" = "latest"
 
 [tasks."aws-vault:refresh"]
 alias = "avr"
