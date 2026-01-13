@@ -1,0 +1,9 @@
+[tools]
+helm = "latest"
+helm-ls = "latest"
+k9s = "latest"
+kind = "latest"
+kubebuilder = "latest"
+kubectl = "latest"
+kubelogin = "latest"
+popeye = "latest"

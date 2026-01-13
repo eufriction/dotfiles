@@ -2,6 +2,10 @@
 AWS_VAULT_KEYCHAIN_NAME = "login"
 AWS_VAULT_BACKEND = "keychain"
 
+[tools]
+aws-cli = "latest"
+aws-vault = "latest"
+
 [tasks."aws-vault:refresh"]
 alias = "avr"
 description = "Refresh credentials in `aws-vault` subshell"

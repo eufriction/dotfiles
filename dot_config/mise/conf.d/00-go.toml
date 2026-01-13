@@ -1,0 +1,3 @@
+[tools]
+"go:golang.org/x/tools/gopls" = "latest"
+go = "latest"
