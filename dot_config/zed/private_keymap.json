@@ -9,7 +9,20 @@
   {
     "context": "Workspace",
     "bindings": {
-      // "shift shift": "file_finder::Toggle"
+      "cmd-shift-g": [
+        "task::Spawn",
+        {
+          "task_name": "LazyGit",
+          "reveal_target": "center"
+        }
+      ],
+      "cmd-p": [
+        "task::Spawn",
+        {
+          "task_name": "Television",
+          "reveal_target": "center"
+        }
+      ],
     }
   },
   {
