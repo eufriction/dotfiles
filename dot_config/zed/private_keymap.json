@@ -88,5 +88,11 @@
     "bindings": {
       "ctrl-w w": "workspace::ActivateNextWindow"
     }
+  },
+  {
+    "context": "(VimControl && !menu)",
+    "bindings": {
+      "space": null
+    }
   }
 ]
