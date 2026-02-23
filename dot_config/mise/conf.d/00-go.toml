@@ -1,3 +1,7 @@
+[env]
+GOBIN = "{{env.HOME}}/.local/bin"
+GOPATH = "{{env.HOME}}/go"
+
 [tools]
 "go:golang.org/x/tools/gopls" = "latest"
 go = "latest"
