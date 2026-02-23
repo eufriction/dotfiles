@@ -68,8 +68,7 @@
       "**/templates/**/*.yaml",
       "**/templates/**/*.yml",
       "**/helmfile.d/**/*.yaml",
-      "**/helmfile.d/**/*.yml",
-      "**/values*.yaml"
+      "**/helmfile.d/**/*.yml"
     ]
   },
   "git_panel": {
@@ -94,6 +93,13 @@
       "enable_language_server": true,
       "language_servers": [
         "gopls"
+      ]
+    },
+    "Helm": {
+      "enable_language_server": true,
+      "language_servers": [
+        "helm",
+        "yaml-language-server"
       ]
     },
     "Markdown": {
@@ -131,11 +137,11 @@
         "vulncheck": "Imports"
       }
     },
-    "helm_ls": {
+    "helm": {
       "settings": {
         "helm-ls": {
           "yamlls": {
-            "enabled": true
+            "enabled": false
           }
         }
       }
