@@ -1,3 +1,6 @@
+[tools]
+node = "latest"
+
 [tasks."techdocs:generate"]
 alias = "tdg"
 description = "Generate the TechDocs site. Useful for troubleshooting badly generated sites."
