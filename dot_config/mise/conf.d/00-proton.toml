@@ -1,0 +1,5 @@
+[tools."http:pass-cli"]
+version = "2.0.2"
+
+[tools."http:pass-cli".platforms]
+macos-aarch64 = { url = "https://proton.me/download/pass-cli/2.0.2/pass-cli-macos-aarch64", checksum = "sha256:0bfd99c4d8270ce2c2913c93a823c620a8975e3c2f1ce24d234e41706cb5cf47" }
