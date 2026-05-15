@@ -8,10 +8,11 @@
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
   "agent": {
+    "dock": "left",
     {{- if .work.enable }}
     "inline_assistant_model": {
       "provider": "copilot_chat",
-      "model": "claude-sonnet-4.6"
+      "model": "claude-sonnet-4.6",
     },
     {{- else }}
     "inline_assistant_model": {
@@ -20,9 +21,11 @@
     },
     {{- end }}
     "default_model": {
+      "effort": "high",
+      "enable_thinking": true,
     {{- if .work.enable }}
       "provider": "copilot_chat",
-      "model": "claude-sonnet-4.6"
+      "model": "claude-opus-4.6",
     {{- else }}
       "provider": "mistral",
       "model": "devstral-small-latest"
@@ -31,28 +34,173 @@
     "default_profile": "write",
     "model_parameters": [],
     "notify_when_agent_waiting": "never",
-    "tool_permissions": {
-      "default": "allow"
+    "show_turn_stats": true,
+    {{- if .work.enable }}
+    "thread_summary_model": {
+      "provider": "copilot_chat",
+      "model": "claude-sonnet-4.6",
     },
-    "use_modifier_to_send": true
+    {{- end }}
+    "tool_permissions": {
+      "default": "confirm",
+      "tools": {
+        "mcp:mcp-server-github:search_pull_requests": {
+          "default": "allow"
+        },
+        "mcp:mcp-server-github:get_file_contents": {
+          "default": "allow"
+        },
+        "mcp:mcp-server-github:search_code": {
+          "default": "allow"
+        },
+        "mcp:mcp-server-github:list_branches": {
+          "default": "allow"
+        },
+        "move_path": {
+          "default": "allow"
+        },
+        "save_file": {
+          "default": "allow"
+        },
+        "restore_file_from_disk": {
+          "default": "allow"
+        },
+        "mcp:mcp-server-github:pull_request_read": {
+          "default": "allow"
+        },
+        "create_directory": {
+          "default": "allow"
+        },
+        "mcp:mcp-server-github:issue_read": {
+          "default": "allow"
+        },
+        "mcp:mcp-server-github:search_issues": {
+          "default": "allow"
+        },
+        "copy_path": {
+          "default": "allow"
+        },
+        "fetch": {
+          "default": "allow"
+        },
+        "edit_file": {
+          "default": "allow"
+        },
+        "terminal": {
+          "default": "confirm",
+          "always_allow": [
+            {
+              "pattern": "^docker\\s+(build|image|images|info|inspect|logs|ps|run|version)(\\s|$)"
+            },
+            {
+              "pattern": "^docker\\s+compose\\s+(up|down|logs|ps|exec|build|config)(\\s|$)"
+            },
+            {
+              "pattern": "^(\\w+=\\S+\\s+)*go\\s+(build|clean|doc|env|fmt|generate|get|list|mod|run|test|tool|version|vet)(\\s|$)"
+            },
+            {
+              "pattern": "^go\\s+mod\\s+(tidy|vendor|download|verify)(\\s|$)"
+            },
+            {
+              "pattern": "^(gofmt|golangci-lint)\\b"
+            },
+            {
+              "pattern": "^npm\\s+(install|test|run)"
+            },
+            {
+              "pattern": "^git\\s+(add|autosquash|branch|checkout|describe|diff|fetch|fixup|grep|log|ls-files|ls-remote|merge-base|mv|pop|rev-list|rev-parse|show|stash|status)(\\s|$)"
+            },
+            {
+              "pattern": "^git\\s+remote(\\s+(show|get-url)\\s|\\s*$|-v)"
+            },
+            {
+              "pattern": "^(awk|bc|cat|cd|chmod|cp|diff|echo|find|grep|head|jq|ls|make|mkdir|printf|ps|pwd|readlink|sed|sleep|sort|tail|tee|uniq|wc|which|yamlfmt|yq)\\b"
+            },
+            {
+              "pattern": "^git\\s+.+\\s+(branch|diff|log|grep|remote|show|status)\\b"
+            },
+            {
+              "pattern": "^helm\\s+(lint|list|template|unittest)"
+            },
+            {
+              "pattern": "^kubectl\\s+(api-resources|api-versions|cluster-info|describe|events|get|kustomize|logs|rollout|wait)\\b"
+            },
+            {
+              "pattern": "^kind\\s+(get|load|version)\\s+"
+            },
+            {
+              "pattern": "^(\\w+=\\S+\\s+)*mise\\s+(env|settings|run|tasks|version)(\\s|$)"
+            },
+            {
+              "pattern": "^cilium\\s+(help|hubble|status|version)(\\s|$)"
+            },
+          ],
+          "always_confirm": [
+            {
+              "pattern": "^(pip|pip3|pipx)"
+            },
+            {
+              "pattern": "^npx(\\s|$)"
+            },
+            {
+              "pattern": "sudo\\s+/"
+            },
+            {
+              "pattern": "^git\\s+(commit|merge|push)"
+            },
+            {
+              "pattern": "^git\\s+branch\\s+.*-[dD]"
+            }
+          ]
+        },
+      },
+    },
+    "use_modifier_to_send": true,
   },
+  "agent_buffer_font_size": 12.0,
+  "agent_servers": {
+    "github-copilot-cli": {
+      "type": "registry"
+    },
+    "codex-acp": {
+      "type": "registry",
+    },
+  },
+  "agent_ui_font_size": 13.0,
   "auto_install_extensions": {
     "helm": true,
     "html": true,
     "toml": true,
-    "vale": true
+    "vale": true,
   },
   "autosave": "on_focus_change",
-  "buffer_font_size": 14,
+  "buffer_font_size": 13.0,
+  "buffer_line_height": "comfortable",
+  "cli_default_open_behavior": "new_window",
+  "collaboration_panel": {
+    "dock": "right"
+  },
   {{- if .work.enable }}
   "context_servers": {
     "mcp-server-github": {
       "enabled": true,
       "settings": {
-        "github_personal_access_token": {{ secret "find-generic-password" "-ga" "mcp-server-github" "-w" | quote }}
-      }
-    }
+        "github_personal_access_token": {{ secret "find-generic-password" "-ga" "mcp-server-github" "-w" | quote }},
+      },
+    },
+    "mise-mcp": {
+      "enabled": true,
+      "remote": false,
+      "command": "mise",
+      "args": [
+        "mcp"
+      ],
+      "env": {
+        "MISE_EXPERIMENTAL": "1",
+      },
+    },
   },
+  "diff_view_style": "unified",
   {{- end }}
   "edit_predictions": {
   {{- if .work.enable }}
@@ -60,7 +208,7 @@
   {{- else }}
     "provider": "codestral",
   {{- end }}
-    "mode": "subtle"
+    "mode": "subtle",
   },
   "file_types": {
     "Helm": [
@@ -68,11 +216,13 @@
       "**/templates/**/*.yaml",
       "**/templates/**/*.yml",
       "**/helmfile.d/**/*.yaml",
-      "**/helmfile.d/**/*.yml"
-    ]
+      "**/helmfile.d/**/*.yml",
+    ],
   },
   "git_panel": {
-    "tree_view": true
+    "dock": "right",
+    "sort_by_path": true,
+    "tree_view": true,
   },
   "helix_mode": true,
   "language_models": {
@@ -83,24 +233,24 @@
           "name": "devstral:latest",
           "display_name": "devstral",
           "max_tokens": 32768,
-          "supports_tools": true
-        }
-      ]
-    }
+          "supports_tools": true,
+        },
+      ],
+    },
   },
   "languages": {
     "Go": {
       "enable_language_server": true,
       "language_servers": [
-        "gopls"
-      ]
+        "gopls",
+      ],
     },
     "Helm": {
       "enable_language_server": true,
       "language_servers": [
         "helm",
-        "yaml-language-server"
-      ]
+        "yaml-language-server",
+      ],
     },
     "Markdown": {
       "enable_language_server": true,
@@ -108,19 +258,21 @@
       "format_on_save": "on",
       "language_servers": [
         "markdown-oxide",
-        "vale"
-      ]
-    }
+        "vale",
+      ],
+    },
   },
   "lsp": {
     "gopls": {
       "binary": {
-        "path": "gopls"
+        "path": "gopls",
+      },
+      "settings": {
+        "codelenses": {
+          "run_govulncheck": true,
+        },
       },
       "initialization_options": {
-        "codelenses": {
-          "run_govulncheck": true
-        },
         "gofumpt": true,
         "hints": {
           "assignVariableTypes": true,
@@ -129,67 +281,78 @@
           "constantValues": true,
           "functionTypeParameters": true,
           "parameterNames": true,
-          "rangeVariableTypes": true
+          "rangeVariableTypes": true,
         },
         "semanticTokens": true,
         "staticcheck": true,
         "usePlaceholders": true,
-        "vulncheck": "Imports"
-      }
+        "vulncheck": "Imports",
+      },
     },
     "helm": {
       "settings": {
         "helm-ls": {
           "yamlls": {
-            "enabled": false
-          }
-        }
-      }
+            "enabled": false,
+          },
+        },
+      },
     },
     "vale": {
       "binary": {
-        "path": "vale-ls"
+        "path": "vale-ls",
       },
       "initialization_options": {
-        "syncOnStartup": true
-      }
+        "syncOnStartup": true,
+      },
     },
     "yaml-language-server": {
       "settings": {
         "yaml": {
           "schemaStore": {
-            "enable": true
-          }
-        }
-      }
-    }
+            "enable": true,
+          },
+        },
+      },
+    },
   },
   "format_on_save": "on",
   "formatter": "language_server",
   "macos": {
-    "use_system_window_tabs": false
+    "use_system_window_tabs": false,
+  },
+  "node": {
+    "ignore_system_version": true
+  },
+  "outline_panel": {
+    "dock": "right"
   },
   "preferred_line_length": 120,
   "prettier": {
-    "allowed": true
+    "allowed": true,
   },
+  "project_panel": {
+    "dock": "right",
+    "hide_hidden": false,
+  },
+  "semantic_tokens": "combined",
   "soft_wrap": "bounded",
   "telemetry": {
     "metrics": false,
-    "diagnostics": false
+    "diagnostics": false,
   },
   "terminal": {
-    "copy_on_select": true
+    "copy_on_select": true,
   },
   "theme": {
-    "dark": "Hex Ayu Mirage",
-    "light": "Hex Solarized Light Theme",
-    "mode": "system"
+    "dark": "Ayu Dark",
+    "light": "Ayu Light",
+    "mode": "system",
   },
-  "ui_font_size": 14,
+  "ui_font_size": 13.0,
   "vim_mode": true,
   "which_key": {
     "enabled": true,
-    "delay_ms": 700
-  }
+    "delay_ms": 700,
+  },
 }
