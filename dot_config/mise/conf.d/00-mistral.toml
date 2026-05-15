@@ -1,0 +1,3 @@
+[tools]
+"pipx:mistral-vibe" = "latest"
+uv = "latest"
