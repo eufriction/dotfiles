@@ -9,7 +9,7 @@
           "reveal_target": "center"
         }
       ],
-      "cmd-p": [
+      "cmd-p p": [
         "task::Spawn",
         {
           "task_name": "Television",
