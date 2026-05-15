@@ -1,4 +1,6 @@
 [tools]
+cilium-cli = "latest"
+cilium-hubble = "latest"
 helm = "latest"
 helm-ls = "latest"
 k9s = "latest"
@@ -6,4 +8,5 @@ kind = "latest"
 kubebuilder = "latest"
 kubectl = "latest"
 kubelogin = "latest"
+velero = "latest"
 "go:github.com/erikkinding/sk" = "0.3.9"
