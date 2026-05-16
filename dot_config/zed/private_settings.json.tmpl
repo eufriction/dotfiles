@@ -165,12 +165,14 @@
     "codex-acp": {
       "type": "registry",
     },
+    {{- if not .work.enable }}
     "Mistral Vibe": {
       "type": "custom",
       "command": "vibe-acp",
       "args": [],
       "env": {}
     }
+    {{- end }}
   },
   "agent_ui_font_size": 13.0,
   "auto_install_extensions": {
