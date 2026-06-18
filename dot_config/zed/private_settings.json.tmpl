@@ -43,50 +43,8 @@
     },
     {{- end }}
     "tool_permissions": {
-      "default": "confirm",
+      "default": "allow",
       "tools": {
-        "mcp:mcp-server-github:search_pull_requests": {
-          "default": "allow"
-        },
-        "mcp:mcp-server-github:get_file_contents": {
-          "default": "allow"
-        },
-        "mcp:mcp-server-github:search_code": {
-          "default": "allow"
-        },
-        "mcp:mcp-server-github:list_branches": {
-          "default": "allow"
-        },
-        "move_path": {
-          "default": "allow"
-        },
-        "save_file": {
-          "default": "allow"
-        },
-        "restore_file_from_disk": {
-          "default": "allow"
-        },
-        "mcp:mcp-server-github:pull_request_read": {
-          "default": "allow"
-        },
-        "create_directory": {
-          "default": "allow"
-        },
-        "mcp:mcp-server-github:issue_read": {
-          "default": "allow"
-        },
-        "mcp:mcp-server-github:search_issues": {
-          "default": "allow"
-        },
-        "copy_path": {
-          "default": "allow"
-        },
-        "fetch": {
-          "default": "allow"
-        },
-        "edit_file": {
-          "default": "allow"
-        },
         "terminal": {
           "default": "confirm",
           "always_allow": [
@@ -109,19 +67,31 @@
               "pattern": "^npm\\s+(install|test|run)"
             },
             {
-              "pattern": "^git\\s+(add|autosquash|branch|checkout|describe|diff|fetch|fixup|grep|log|ls-files|ls-remote|merge-base|mv|pop|rev-list|rev-parse|show|stash|status)(\\s|$)"
+              "pattern": "^gh\\s+(issue|label|release|repo|run)\\s+(?:list|view)\\b"
+            },
+            {
+              "pattern": "^gh\\s+api\\s+graphql\\b.*\\bquery="
+            },
+            {
+              "pattern": "^gh\\s+aw\\s+(?:validate\\s+--no-check-update|compile\\s+--purge\\s+--no-check-update)\\s*$"
+            },
+            {
+              "pattern": "^git\\s+(add|autosquash|branch|checkout|describe|diff|fetch|fixup|grep|log|ls-files|ls-remote|ls-tree|merge-base|mv|pop|rev-list|rev-parse|show|stash|status)(\\s|$)"
             },
             {
               "pattern": "^git\\s+remote(\\s+(show|get-url)\\s|\\s*$|-v)"
             },
             {
-              "pattern": "^(awk|bc|cat|cd|chmod|cp|diff|echo|find|grep|head|jq|ls|make|mkdir|printf|ps|pwd|readlink|sed|sleep|sort|tail|tee|uniq|wc|which|yamlfmt|yq)\\b"
+              "pattern": "^(awk|bc|cat|cd|chmod|cp|diff|echo|find|grep|head|hk|jq|ls|make|mkdir|prettier|printf|ps|pwd|readlink|sed|shellcheck|shfmt|sleep|sort|tail|tee|uniq|vale|wc|which|xargs|yamlfmt|yq)\\b"
             },
             {
-              "pattern": "^git\\s+.+\\s+(branch|diff|log|grep|remote|show|status)\\b"
+              "pattern": "^jq\\s+length(\\s|$)"
             },
             {
-              "pattern": "^helm\\s+(lint|list|template|unittest)"
+              "pattern": "^git\\s+.+\\s+(branch|check-ignore|diff|grep|log|ls-remote|ls-tree|merge-base|patch-id|remote|rev-parse|show|status)\\b"
+            },
+            {
+              "pattern": "^helm\\s+(dependency|images|lint|list|plugin list|template|unittest|version)"
             },
             {
               "pattern": "^kubectl\\s+(api-resources|api-versions|cluster-info|describe|events|get|kustomize|logs|rollout|wait)\\b"
@@ -130,11 +100,11 @@
               "pattern": "^kind\\s+(get|load|version)\\s+"
             },
             {
-              "pattern": "^(\\w+=\\S+\\s+)*mise\\s+(env|settings|run|tasks|version)(\\s|$)"
+              "pattern": "^(\\w+=\\S+\\s+)*mise\\s+(env|help|registry|settings|run|tasks|--version)(\\s|$)"
             },
             {
               "pattern": "^cilium\\s+(help|hubble|status|version)(\\s|$)"
-            },
+            }
           ],
           "always_confirm": [
             {
@@ -147,7 +117,7 @@
               "pattern": "sudo\\s+/"
             },
             {
-              "pattern": "^git\\s+(commit|merge|push)"
+              "pattern": "^git\\s+(commit|merge|push)\\b"
             },
             {
               "pattern": "^git\\s+branch\\s+.*-[dD]"
@@ -192,6 +162,7 @@
   "context_servers": {},
   "diff_view_style": "unified",
   "edit_predictions": {
+    "allow_data_collection": "no",
   {{- if .work.enable }}
     "provider": "copilot",
   {{- else }}
@@ -332,6 +303,7 @@
   },
   "terminal": {
     "copy_on_select": true,
+    "cursor_shape": "bar",
   },
   "theme": {
     "dark": "Ayu Dark",
