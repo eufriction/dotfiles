@@ -1,6 +1,7 @@
 [tools]
 cilium-cli = "latest"
 cilium-hubble = "latest"
+cmctl = "latest"
 helm = "latest"
 helm-ls = "latest"
 k9s = "latest"
