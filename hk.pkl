@@ -1,0 +1,21 @@
+amends "package://github.com/jdx/hk/releases/download/v1.48.0/hk@1.48.0#/Config.pkl"
+import "package://github.com/jdx/hk/releases/download/v1.48.0/hk@1.48.0#/Builtins.pkl"
+
+hooks {
+  ["pre-commit"] {
+    fix = true
+    stash = "git"
+    steps {
+      ["betterleaks"] = Builtins.betterleaks
+      ["detect-private-key"] = Builtins.detect_private_key
+      ["prettier"] = Builtins.prettier
+      ["vale"] = (Builtins.vale) {
+        glob = List("**/*.md")
+      }
+      ["shellcheck"] = Builtins.shellcheck
+      ["shfmt"] = Builtins.shfmt
+      ["taplo"] = Builtins.taplo
+      ["taplo-format"] = Builtins.taplo_format
+    }
+  }
+}

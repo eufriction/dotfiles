@@ -1,2 +1,13 @@
 [tools]
 vale = "latest"
+shellcheck = "latest"
+shfmt = "latest"
+"npm:prettier" = "latest"
+taplo = "latest"
+"aqua:betterleaks/betterleaks" = "latest"
+
+[env]
+HK_MISE = "1"
+
+[hooks]
+postinstall = "hk install --mise"
