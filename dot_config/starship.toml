@@ -8,5 +8,3 @@ disabled = false
 [[kubernetes.contexts]]
 context_pattern = 'arn.*/(?P<cluster>.*)'
 context_alias = "$cluster"
-
-
