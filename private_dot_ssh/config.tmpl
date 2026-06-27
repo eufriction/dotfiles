@@ -1,6 +1,11 @@
 Host github.com
     HostName github.com
     IdentitiesOnly yes
+    IdentityFile ~/.ssh/id_github_wirelesscar_sweden_ab
+    AddKeysToAgent yes
+{{- if eq .chezmoi.os "darwin" }}
+    UseKeychain yes
+{{- end }}
 {{ if .work.enable }}
 Include ~/.ssh/config.work
 {{- end  }}
