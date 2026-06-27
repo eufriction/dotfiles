@@ -50,10 +50,7 @@
   {
     "label": "Go test",
     "command": "bash",
-    "args": [
-      "-c",
-      "zed ${ZED_FILE%.go}_test.go"
-    ],
+    "args": ["-c", "zed ${ZED_FILE%.go}_test.go"],
     "shell": "system"
   },
   {
