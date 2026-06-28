@@ -39,6 +39,7 @@
 - For implementation plans, decide whether one commit or more is appropriate.
 - Never commit `.agents/plans/**` unless explicitly asked.
 - Always update the active plan before ending the turn.
+- Summarise completed plans and move them into `.agents/plans/archive/`.
 
 ## Branches
 
