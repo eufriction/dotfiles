@@ -21,7 +21,7 @@ Audit a SKILL.md (and its supporting files) against Anthropic's skill authoring 
 
 Copyable progress tracker:
 
-```
+```text
 Review progress:
 - [ ] Read SKILL.md and list directory contents
 - [ ] Score each checklist category
@@ -85,7 +85,7 @@ Review progress:
 
 Present the review as:
 
-```
+```text
 ## Skill review: `<skill-name>`
 
 | Category | Verdict | Note |
@@ -106,7 +106,7 @@ After presenting the review, ask: "Want me to apply these fixes?"
 
 For a skill with an overly vague description and no workflow checklist:
 
-```
+```text
 ## Skill review: `deploy-helper`
 
 | Category | Verdict | Note |

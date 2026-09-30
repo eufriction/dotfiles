@@ -33,7 +33,7 @@ This handbook summarizes the essentials of plain English style. It focuses on th
 
 ## II. Elementary Rules Of Usage
 
-### Rule 1. Form the possessive singular of nouns by adding 's.
+### Rule 1. Form the possessive singular of nouns by adding 's
 
 Follow this rule whatever the final consonant. Thus write,
 
@@ -55,7 +55,7 @@ the temple of Isis
 
 The pronominal possessives _hers_, _its_, _theirs_, _yours_, and _oneself_ have no apostrophe.
 
-### Rule 2. In a series of three or more terms with a single conjunction, use a comma after each term except the last.
+### Rule 2. In a series of three or more terms with a single conjunction, use a comma after each term except the last
 
 Thus write,
 
@@ -71,7 +71,7 @@ In the names of business firms the last comma is omitted, as,
 
 Brown, Shipley & Co.
 
-### Rule 3. Enclose parenthetic expressions between commas.
+### Rule 3. Enclose parenthetic expressions between commas
 
 The best way to see a country, unless you are pressed for time, is to travel on foot.
 
@@ -131,7 +131,7 @@ Other illustrations may be found in sentences quoted under Rules 4, 5, 6, 7, 16,
 
 The writer should be careful not to set off independent clauses by commas: see under Rule 5.
 
-### Rule 4. Place a comma before a conjunction introducing a co-ordinate clause.
+### Rule 4. Place a comma before a conjunction introducing a co-ordinate clause
 
 The early records of the city have disappeared, and the story of its first years can no longer be reconstructed.
 
@@ -169,7 +169,7 @@ I have heard his arguments, but am still unconvinced.
 
 He has had several years' experience and is thoroughly competent.
 
-### Rule 5. Do not join independent clauses by a comma.
+### Rule 5. Do not join independent clauses by a comma
 
 If two or more clauses, grammatically complete and not joined by a conjunction, are to form a single compound sentence, the proper mark of punctuation is a semicolon.
 
@@ -205,7 +205,7 @@ I hardly knew him, he was so changed,
 
 a comma, not a semicolon, is required. But this form of expression is inappropriate in writing, except in the dialogue of a story or play, or perhaps in a familiar letter.
 
-### Rule 6. Do not break sentences in two.
+### Rule 6. Do not break sentences in two
 
 In other words, do not use periods for commas.
 
@@ -223,7 +223,7 @@ The writer must, however, be certain that the emphasis is warranted, and that he
 
 Rules 3, 4, 5, and 6 cover the most important principles in the punctuation of ordinary sentences; they should be so thoroughly mastered that their application becomes second nature.
 
-### Rule 7. A participial phrase at the beginning of a sentence must refer to the grammatical subject.
+### Rule 7. A participial phrase at the beginning of a sentence must refer to the grammatical subject
 
 Walking slowly down the road, he saw a woman accompanied by two children.
 
@@ -248,7 +248,7 @@ Wondering irresolutely what to do next, the clock struck twelve.
 
 ## III. Elementary Principles Of Composition
 
-### Rule 8. Make the paragraph the unit of composition: one paragraph to each topic.
+### Rule 8. Make the paragraph the unit of composition: one paragraph to each topic
 
 If the subject on which you are writing is of slight extent, or if you intend to treat it very briefly, there may be no need of subdividing it into topics. Thus a brief description, a brief summary of a literary work, a brief account of a single incident, a narrative merely outlining an action, the setting forth of a single idea, any one of these is best written in a single paragraph. After the paragraph has been written, examine it to see whether subdivision will not improve it.
 
@@ -290,7 +290,7 @@ As a rule, single sentences should not be written or printed as paragraphs. An e
 
 In dialogue, each speech, even if only a single word, is a paragraph by itself; that is, a new paragraph begins with each change of speaker. The application of this rule, when dialogue and narrative are combined, is best learned from examples in well-printed works of fiction.
 
-### Rule 9. As a rule, begin each paragraph with a topic sentence, end it in conformity with the beginning.
+### Rule 9. As a rule, begin each paragraph with a topic sentence, end it in conformity with the beginning
 
 Again, the object is to aid the reader. The practice here recommended enables him to discover the purpose of each paragraph as he begins to read it, and to retain this purpose in mind as he ends it. For this reason, the most generally useful kind of paragraph, particularly in exposition and argument, is that in which
 
@@ -332,7 +332,7 @@ Another flight of steps, and they emerged on the roof.
 
 The brief paragraphs of animated narrative, however, are often without even this semblance of a topic sentence. The break between them serves the purpose of a rhetorical pause, throwing into prominence some detail of the action.
 
-### Rule 10. Use the active voice.
+### Rule 10. Use the active voice
 
 The active voice is usually more direct and vigorous than the passive:
 
@@ -384,7 +384,7 @@ The habitual use of the active voice makes for forcible writing. This is true no
 | The reason that he left college was that his health became impaired.   | Failing health compelled him to leave college.   |
 | It was not long before he was very sorry that he had said what he had. | He soon repented his words.                      |
 
-### Rule 11. Put statements in positive form.
+### Rule 11. Put statements in positive form
 
 Make definite assertions. Avoid tame, colorless, hesitating, non-committal language. Use the word _not_ as a means of denial or in antithesis, never as a means of evasion.
 
@@ -416,7 +416,7 @@ Negative words other than _not_ are usually strong:
 
 The sun never sets upon the British flag.
 
-### Rule 12. Use definite, specific, concrete language.
+### Rule 12. Use definite, specific, concrete language
 
 Prefer the specific to the general, the definite to the vague, the concrete to the abstract.
 
@@ -464,7 +464,7 @@ Herbert Spencer, from whose Philosophy of Style the preceding paragraph is quote
 | ---------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
 | In proportion as the manners, customs, and amusements of a nation are cruel and barbarous, the regulations of their penal code will be severe. | In proportion as men delight in battles, bull-fights, and combats of gladiators, will they punish by hanging, burning, and the rack. |
 
-### Rule 13. Omit needless words.
+### Rule 13. Omit needless words
 
 Vigorous writing is concise. A sentence should contain no unnecessary words, a paragraph no unnecessary sentences, for the same reason that a drawing should have no unnecessary lines and a machine no unnecessary parts. This requires not that the writer make all his sentences short, or that he avoid all detail and treat his subjects only in outline, but that he make every word tell.
 
@@ -521,7 +521,7 @@ Apart from its triteness and emptiness, the paragraph above is weak because of t
 
 If the writer finds that he has written a series of sentences of the type described, he should recast enough of them to remove the monotony, replacing them by simple sentences, by sentences of two clauses joined by a semicolon, by periodic sentences of two clauses, by sentences, loose or periodic, of three clauses—whichever best represent the real relations of the thought.
 
-### Rule 15. Express co-ordinate ideas in similar form.
+### Rule 15. Express co-ordinate ideas in similar form
 
 This principle, that of parallel construction, requires that expressions of similar content and function should be outwardly similar. The likeness of form enables the reader to recognize more readily the likeness of content and function. Familiar instances from the Bible are the Ten Commandments, the Beatitudes, and the petitions of the Lord's Prayer.
 
@@ -553,7 +553,7 @@ See also the third example under Rule 12 and the last under Rule 13.
 
 It may be asked, what if a writer needs to express a very large number of similar ideas, say twenty? Must he write twenty consecutive sentences of the same pattern? On closer examination he will probably find that the difficulty is imaginary, that his twenty ideas can be classified in groups, and that he need apply the principle only within each group. Otherwise he had best avoid difficulty by putting his statements in the form of a table.
 
-### Rule 16. Keep related words together.
+### Rule 16. Keep related words together
 
 The position of the words in a sentence is the principal means of showing their relationship. The writer must therefore, so far as possible, bring together the words, and groups of words, that are related in thought, and keep apart those which are not so related.
 
@@ -596,7 +596,7 @@ Modifiers should come, if possible, next to the word they modify. If several exp
 | He only found two mistakes.                                                                                                                                | He found only two mistakes.                                                                                                                        |
 | Major R. E. Joyce will give a lecture on Tuesday evening in Bailey Hall, to which the public is invited, on “My Experiences in Mesopotamia” at eight P. M. | On Tuesday evening at eight P. M., Major R. E. Joyce will give in Bailey Hall a lecture on “My Experiences in Mesopotamia.” The public is invited. |
 
-### Rule 17. In summaries, keep to one tense.
+### Rule 17. In summaries, keep to one tense
 
 In summarizing the action of a drama, the writer should always use the present tense. In summarizing a poem, story, or novel, he should preferably use the present, though he may use the past if he prefers. If the summary is in the present tense, antecedent action should be expressed by the perfect; if in the past, by the past perfect.
 
@@ -612,7 +612,7 @@ In presenting the statements or the thought of some one else, as in summarizing 
 
 In notebooks, in newspapers, in handbooks of literature, summaries of one kind or another may be indispensable, and for children in primary schools it is a useful exercise to retell a story in their own words. But in the criticism or interpretation of literature the writer should be careful to avoid dropping into summary. He may find it necessary to devote one or two sentences to indicating the subject, or the opening situation, of the work he is discussing; he may cite numerous details to illustrate its qualities. But he should aim to write an orderly discussion supported by evidence, not a summary with occasional comment. Similarly, if the scope of his discussion includes a number of works, he will as a rule do better not to take them up singly in chronological order, but to aim from the beginning at establishing general conclusions.
 
-### Rule 18. Place the emphatic words of a sentence at the end.
+### Rule 18. Place the emphatic words of a sentence at the end
 
 The proper place in the sentence for the word, or group of words, which the writer desires to make most prominent is usually the end.
 

@@ -18,7 +18,7 @@ description: >
 4. Lowercase `kind` (e.g. `CiliumNetworkPolicy` → `ciliumnetworkpolicy`).
 5. Build the schema comment:
 
-   ```
+   ```text
    # yaml-language-server: $schema=https://raw.githubusercontent.com/datreeio/CRDs-catalog/main/<group>/<kind>_<version>.json
    ```
 

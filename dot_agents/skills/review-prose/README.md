@@ -1,1 +1,1 @@
-From https://github.com/obra/the-elements-of-style.
+From <https://github.com/obra/the-elements-of-style>.
