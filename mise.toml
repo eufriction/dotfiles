@@ -1,13 +1,25 @@
+[env]
+HK_MISE = 1
+
 [tools]
-vale = "latest"
+harper-cli = "latest"
+hk = "latest"
+pkl = "latest"
+rumdl = "latest"
 shellcheck = "latest"
 shfmt = "latest"
-"npm:prettier" = "latest"
 taplo = "latest"
+vale = "latest"
 "aqua:betterleaks/betterleaks" = "latest"
 
-[env]
-HK_MISE = "1"
-
 [hooks]
+enter = "hk install --mise"
 postinstall = "hk install --mise"
+
+[tasks."check"]
+description = "Run static analysis for changed files."
+run = "hk run check"
+
+[tasks."check:all"]
+description = "Run static analysis for all files."
+run = "hk run check --all"

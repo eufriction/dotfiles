@@ -1,0 +1,9 @@
+# Configuration reference https://github.com/rvben/rumdl
+
+[global]
+exclude = [".vale/", "dot_agents/skills/"]
+
+[MD013]
+tables = false
+code-blocks = false
+reflow = true

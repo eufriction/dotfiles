@@ -1,21 +1,41 @@
-amends "package://github.com/jdx/hk/releases/download/v1.48.0/hk@1.48.0#/Config.pkl"
-import "package://github.com/jdx/hk/releases/download/v1.48.0/hk@1.48.0#/Builtins.pkl"
+amends "package://github.com/jdx/hk/releases/download/v2.4.0/hk@2.4.0#/Config.pkl"
+
+import "package://github.com/jdx/hk/releases/download/v2.4.0/hk@2.4.0#/Builtins.pkl"
+
+local linters = new Mapping {
+  ["betterleaks"] = Builtins.betterleaks
+  ["detect-private-key"] = Builtins.detect_private_key
+  ["harper"] = (Builtins.harper) {
+    glob = "**/*.md"
+    exclude = List("dot_agents/**", ".vale/**")
+    check = "harper-cli lint --user-dict-path .harper-dictionary.txt {{files}}"
+  }
+  ["pkl"] = Builtins.pkl
+  ["pkl-format"] = Builtins.pkl_format
+  ["rumdl"] = Builtins.rumdl
+  ["rumdl-format"] = Builtins.rumdl_format
+  ["shellcheck"] = Builtins.shellcheck
+  ["shfmt"] = Builtins.shfmt
+  ["taplo"] = Builtins.taplo
+  ["taplo-format"] = Builtins.taplo_format
+  ["vale"] = (Builtins.vale) {
+    glob = List("**/*.md")
+  }
+}
+
+steps = linters
 
 hooks {
+  ["commit-msg"] {
+    steps {
+      ["conventional-commit"] = Builtins.check_conventional_commit
+    }
+  }
   ["pre-commit"] {
     fix = true
     stash = "git"
-    steps {
-      ["betterleaks"] = Builtins.betterleaks
-      ["detect-private-key"] = Builtins.detect_private_key
-      ["prettier"] = Builtins.prettier
-      ["vale"] = (Builtins.vale) {
-        glob = List("**/*.md")
-      }
-      ["shellcheck"] = Builtins.shellcheck
-      ["shfmt"] = Builtins.shfmt
-      ["taplo"] = Builtins.taplo
-      ["taplo-format"] = Builtins.taplo_format
-    }
+    stage = false
+    fail_on_fix = true
+    steps = linters
   }
 }
