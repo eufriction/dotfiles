@@ -1,0 +1,55 @@
+#!/bin/bash
+
+# Run expensive operations once per day
+
+# Source helper scripts with functions
+# shellcheck disable=SC1091
+source "${HOME}/.zsh_completions"
+
+# Define paths
+last_run_path="${XDG_CACHE_HOME:-$HOME/.cache}/zsh_daily"
+last_run_file="${last_run_path}/last_successful_run"
+
+# Ensure the paths exist
+mkdir -p "$last_run_path"
+
+# Read last run (safely), get today's date
+last_run=""
+[[ -f $last_run_file ]] && last_run=$(<"$last_run_file")
+today=$(date +%F)
+
+autoload -Uz compinit
+
+prune_docker_cache() {
+	if ! docker info >/dev/null 2>&1; then
+		echo "Skipping Docker cache pruning: Docker daemon is unavailable."
+		return
+	fi
+
+	echo "Pruning stale docker builder cache. This may take a while..."
+	docker builder prune -a --filter "until=168h" --force >/dev/null 2>&1
+	docker image prune -a --filter "until=168h" --force >/dev/null 2>&1
+}
+
+run_daily_operations() {
+	echo "Running daily operations."
+	mise self-update -y
+	mise upgrade
+	mise run osx:disable-file-extensions
+	compinit
+	generate_completions
+	load_completions
+	prune_docker_cache
+}
+
+# Run daily tasks only if not already run today
+if [[ $last_run != "$today" ]]; then
+	# Mark today as successful run before
+	# running to reduce multiple terminals
+	# rying to run at the same time
+	echo "$today" >"$last_run_file"
+	run_daily_operations
+else
+	compinit -C
+	load_completions
+fi
