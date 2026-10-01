@@ -60,35 +60,61 @@
       "tools": {
         "terminal": {
           "default": "allow",
+          "always_deny": [
+            {
+              "pattern": "\\baws-vault\\b"
+            }
+          ],
           "always_confirm": [
             {
-              "pattern": "^(pip|pip3|pipx)"
+              // go
+              "pattern": "\\bgo\\s+(install|get)\\b"
             },
             {
-              "pattern": "^npx(\\s|$)"
+              // mise
+              "pattern": "\\b(m|mise)\\s+(install|use)\\b"
+            },
+            {
+              // node
+              "pattern": "\\bnpm\\s+(ci|install)\\b"
+            },
+            {
+              // python
+              "pattern": "\\b(pip|pip3|pipx)\\s+install\\b"
+            },
+            {
+              // uv
+              "pattern": "\\buv\\s+pip\\s+install\\b"
             },
             {
               "pattern": "\\bsudo\\b"
             },
             {
-              "pattern": "\\bgit\\b.*\\b(commit|merge|push)\\b"
+              "pattern": "\\b(security|pass-cli)\\b"
             },
             {
-              "pattern": "\\bgit\\b.*\\bbranch\\b.*\\s(-[dD]|--delete)(\\s|=|$)"
+              "pattern": "\\b(g|git)\\b.*\\b(commit|merge|push)\\b"
             },
             {
-              "pattern": "\\bgh\\s+api\\b"
+              "pattern": "\\b(g|git)\\b.*\\bbranch\\b.*\\s(-[dD]|--delete)(\\s|=|$)"
             },
             {
-              "pattern": "\\b(GITHUB_TOKEN|GH_TOKEN)\\b"
+              "pattern": "\\bgh\\s+(api|auth\\s+token)\\b"
             },
             {
-              "pattern": "\\bgh\\s+auth\\s+token\\b"
+              "pattern": "\\b\\w*(TOKEN|SECRET|PASSWORD|API_KEY)\\w*\\b"
             },
             {
-              "pattern": "(\\.ssh|\\.aws|\\.azure|\\.kube|\\.docker|\\.gnupg)(/|\\b)|\\.config/(gh|gcloud)(/|\\b)|\\.(netrc|git-credentials|npmrc)\\b"
+              // no reading of secrets
+              "pattern": "\\.(aws|azure|config|kube|docker|gnupgssh|)(/|\\b)|\\.(netrc|npmrc|pypirc)\\b"
             }
           ]
+        },
+        "delete_path": {
+          "default": "confirm"
+        },
+        "create_directory": {
+          "default": "confirm"
         },
       },
     },
@@ -97,8 +123,10 @@
   "agent_buffer_font_size": 12.0,
   "agent_ui_font_size": 13.0,
   "auto_install_extensions": {
+    "harper": true,
     "helm": true,
     "html": true,
+    "rumdl": true,
     "toml": true,
     "vale": true,
   },
@@ -125,13 +153,14 @@
       "**/templates/**/*.tpl",
       "**/templates/**/*.yaml",
       "**/templates/**/*.yml",
-      "**/helmfile.d/**/*.yaml",
-      "**/helmfile.d/**/*.yml",
+      "**/templates/**/*.gotmpl",
+      "**/values*.yaml",
+      "**/values*.yml"
     ],
   },
   "git_panel": {
     "dock": "right",
-    "sort_by_path": true,
+    "sort_by": "path",
     "tree_view": true,
   },
   "helix_mode": true,
@@ -164,10 +193,10 @@
     },
     "Markdown": {
       "enable_language_server": true,
-      "formatter": "prettier",
-      "format_on_save": "on",
+      "formatter": "language_server",
+      "format_on_save": "modifications_if_available",
       "language_servers": [
-        "markdown-oxide",
+        "rumdl",
         "vale",
       ],
     },
@@ -207,6 +236,12 @@
           },
         },
       },
+    },
+    "rumdl": {
+      "binary": {
+        "path": "rumdl",
+        "arguments": ["server"]
+      }
     },
     "vale": {
       "binary": {
@@ -255,12 +290,6 @@
     "copy_on_select": true,
     "cursor_shape": "bar",
   },
-  "theme": {
-    "dark": "Ayu Dark",
-    "light": "Ayu Light",
-    "mode": "system",
-  },
-  "ui_font_size": 13.0,
   "vim_mode": true,
   "which_key": {
     "enabled": true,
