@@ -1,0 +1,12 @@
+[tools]
+harper-cli = "latest"
+helm-ls = "latest"
+java = "temurin"                      # required for `pkl`
+node = "latest"                       # required for `yaml-language-server`, used by `helm-ls`
+pkl = "latest"
+rumdl = "latest"
+shellcheck = "latest"
+shfmt = "latest"
+taplo = "latest"
+vale = "latest"
+"github:errata-ai/vale-ls" = "latest"
