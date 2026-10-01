@@ -28,7 +28,7 @@
       "model": "gpt-6-luna",
     {{- else }}
       "provider": "mistral",
-      "model": "devstral-small-latest"
+      "model": "zai-glm-latest"
     {{- end }}
     },
     "sandbox_permissions": {
@@ -211,7 +211,9 @@
     "rumdl": {
       "binary": {
         "path": "rumdl",
-        "arguments": ["server"]
+        "arguments": [
+          "server"
+        ]
       }
     },
     "vale": {
