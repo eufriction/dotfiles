@@ -8,7 +8,6 @@
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
   "agent": {
-    "dock": "left",
     "enable_feedback": false,
     {{- if .work.enable }}
     "inline_assistant_model": {
@@ -32,8 +31,6 @@
       "model": "devstral-small-latest"
     {{- end }}
     },
-    "default_profile": "write",
-    "notify_when_agent_waiting": "primary_screen",
     "sandbox_permissions": {
       "network_hosts": [
         "zed.dev"
@@ -51,8 +48,8 @@
     "thinking_display": "auto",
     {{- if .work.enable }}
     "thread_summary_model": {
-      "provider": "copilot_chat",
-      "model": "gpt-5.4",
+      "provider": "openai-subscribed",
+      "model": "gpt-6-luna",
     },
     {{- end }}
     "tool_permissions": {
@@ -120,8 +117,6 @@
     },
     "use_modifier_to_send": true,
   },
-  "agent_buffer_font_size": 12.0,
-  "agent_ui_font_size": 13.0,
   "auto_install_extensions": {
     "harper": true,
     "helm": true,
@@ -131,13 +126,7 @@
     "vale": true,
   },
   "autosave": "on_focus_change",
-  "buffer_font_size": 13.0,
-  "buffer_line_height": "comfortable",
   "cli_default_open_behavior": "new_window",
-  "collaboration_panel": {
-    "dock": "right"
-  },
-  "context_servers": {},
   "diff_view_style": "unified",
   "edit_predictions": {
     "allow_data_collection": "no",
@@ -158,25 +147,7 @@
       "**/values*.yml"
     ],
   },
-  "git_panel": {
-    "dock": "right",
-    "sort_by": "path",
-    "tree_view": true,
-  },
   "helix_mode": true,
-  "language_models": {
-    "ollama": {
-      "api_url": "http://localhost:11434",
-      "available_models": [
-        {
-          "name": "devstral:latest",
-          "display_name": "devstral",
-          "max_tokens": 32768,
-          "supports_tools": true,
-        },
-      ],
-    },
-  },
   "languages": {
     "Go": {
       "enable_language_server": true,
@@ -232,7 +203,7 @@
       "settings": {
         "helm-ls": {
           "yamlls": {
-            "enabled": false,
+            "enabled": true,
           },
         },
       },
@@ -269,17 +240,6 @@
   "node": {
     "ignore_system_version": true
   },
-  "outline_panel": {
-    "dock": "right"
-  },
-  "preferred_line_length": 120,
-  "prettier": {
-    "allowed": true,
-  },
-  "project_panel": {
-    "dock": "right",
-    "hide_hidden": false,
-  },
   "semantic_tokens": "combined",
   "soft_wrap": "bounded",
   "telemetry": {
@@ -288,9 +248,7 @@
   },
   "terminal": {
     "copy_on_select": true,
-    "cursor_shape": "bar",
   },
-  "vim_mode": true,
   "which_key": {
     "enabled": true,
     "delay_ms": 700,
