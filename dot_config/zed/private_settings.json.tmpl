@@ -8,6 +8,15 @@
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
   "agent": {
+    "max_content_width": 750.0,
+    "flexible": false,
+    "default_width": 750.0,
+    "auto_compact": {
+      "threshold": "60%"
+    },
+    "threads_sidebar": {
+      "default_width": 300.0
+    },
     "enable_feedback": false,
     {{- if .work.enable }}
     "inline_assistant_model": {
