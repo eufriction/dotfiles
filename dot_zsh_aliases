@@ -1,4 +1,5 @@
 alias k=kubectl
 alias g=git
 alias m=mise
+alias z='GITHUB_TOKEN="$(gh auth token)" command zed'
 alias ..='cd ..'
