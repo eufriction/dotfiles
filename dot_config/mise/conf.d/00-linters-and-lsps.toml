@@ -1,5 +1,6 @@
 [tools]
 harper-cli = "latest"
+harper-ls = "latest"
 helm-ls = "latest"
 java = "temurin"                      # required for `pkl`
 node = "latest"                       # required for `yaml-language-server`, used by `helm-ls`
